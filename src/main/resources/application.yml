@@ -1,0 +1,23 @@
+server:
+  port: 8100
+  spring:
+    datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+    config:
+      activate:
+        on-profile: local
+    jpa:
+      open-in-view: false
+      hibernate:
+        ddl-auto: create
+      properties:
+        hibernate:
+          ejb:
+            interceptor: imqa.office.imqabackoffice.config.datasource.schema.HibernateInterceptor
+          dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+          format_sql: true
+          use_sql_comments: true
+          show_sql: true
+
+
+
