@@ -22,7 +22,7 @@ public class UserController {
     public String CreateUser(User user){
 
         userService.createuser(user);
-        return "index.html";
+        return null;
     }
 
     @GetMapping("/login")
