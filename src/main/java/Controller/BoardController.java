@@ -2,10 +2,7 @@ package Controller;
 
 import Entity.Board;
 import Service.BoardService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/main")
@@ -18,14 +15,14 @@ public class BoardController {
     }
 
     @PostMapping ("/board/register")
-    public String CreateBoard(Board board){
-
+    public void createBoard(@RequestBody Board board){
         boardService.createboard(board);
-        return null;
     }
 
     @GetMapping("/board")
-    public void DeleteBoard(Board board) {
+    public void deleteBoard(@RequestParam Long board_id) {
+        Board board = new Board();
+            board.setId(board_id);
         boardService.deleteboard(board);
     }
 }

@@ -13,11 +13,12 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
+    public void createuser(User user) {
+        userRepository.save(user);
+    }
+
     public void deleteuser(User user) {
         userRepository.delete(user);
     }
 
-    public void createuser(User user) {
-        userRepository.save(user);
-    }
 }

@@ -2,14 +2,13 @@ package Controller;
 
 import Entity.User;
 import Service.UserService;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/main")
+@RequestMapping("/main1")
 public class UserController {
 
     private UserService userService;
@@ -18,16 +17,17 @@ public class UserController {
         this.userService = userService;
     }
 
-    @PostMapping("/login/register")
-    public String CreateUser(User user){
-
-        userService.createuser(user);
-        return null;
+    @PostMapping("/add")
+    public void createUser() {
+        userService.createuser(new User());
+        return;
+        //todo
     }
 
-    @GetMapping("/login")
-    public String DeleteUser(User user) {
+    @GetMapping("/delete")
+    public void deleteUser(User user) {
         userService.deleteuser(user);
-        return null;
+        return;
+        //todo
     }
 }

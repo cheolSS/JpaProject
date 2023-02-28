@@ -1,13 +1,8 @@
 package Repository;
 
 import Entity.User;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 
 //<T, id>
-public interface UserRepository extends JpaRepository <User, Long> {
-
-
-    <S extends User> S save(S entity);
-
-    void deleteAll();
+public interface UserRepository extends CrudRepository<User, Long> {
 }
