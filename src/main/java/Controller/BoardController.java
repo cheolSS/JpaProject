@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/main")
+@RequestMapping("main")
 public class BoardController {
 
     private BoardService boardService;
@@ -17,7 +17,7 @@ public class BoardController {
         this.boardService = boardService;
     }
 
-    @PostMapping ("/board/register")
+    @PostMapping ("index.html")
     public String CreateBoard(Board board){
 
         boardService.createboard(board);

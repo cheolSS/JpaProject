@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/main")
+@RequestMapping("/main1")
 public class UserController {
 
     private UserService userService;
@@ -22,7 +22,7 @@ public class UserController {
     public String CreateUser(User user){
 
         userService.createuser(user);
-        return null;
+        return "index.html";
     }
 
     @GetMapping("/login")
