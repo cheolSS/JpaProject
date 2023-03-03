@@ -1,14 +1,13 @@
 package Service;
 
-import Entity.Board;
-import Repository.BoardRepository;
+import entitiy.Board;
 import org.springframework.stereotype.Service;
 
 @Service
 public class BoardService {
-    private BoardRepository boardRepository;
+    private final repository.boardRepository boardRepository;
 
-    public BoardService(BoardRepository boardRepository) {
+    public BoardService(repository.boardRepository boardRepository) {
         this.boardRepository = boardRepository;
     }
     public void createboard(Board board) {

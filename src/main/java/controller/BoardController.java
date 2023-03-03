@@ -1,6 +1,6 @@
-package Controller;
+package controller;
 
-import Entity.Board;
+import entitiy.Board;
 import Service.BoardService;
 import org.springframework.web.bind.annotation.*;
 
@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/main")
 public class BoardController {
 
-    private BoardService boardService;
+    private final BoardService boardService;
 
     public BoardController(BoardService boardService) {
         this.boardService = boardService;
     }
 
-    @PostMapping ("/board/register")
+    @GetMapping ("/board/register")
     public void createBoard(@RequestBody Board board){
         boardService.createboard(board);
     }
